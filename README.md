@@ -48,26 +48,26 @@ This Python repository ships with two example frameworks:
 ## Repository Structure
 ```text
 pyBCD-CAO/
-├── main.py                # Entry point for running optimization
-├── cao.py                 # Core CAO algorithm
-├── centralized_decision_making.py
-├── agent_information.py
-├── resource_loader.py
-├── test_validator.py      # Unit tests for validating each testbed
-├── optimization_loop.py
-├── testbeds/
-│   ├── HoldTheLine/
-│   │   ├── Framework.py
-│   │   └── Parameters.properties
-│   ├── AdaptiveCoverage2D/
-│   │   ├── Framework.py
-│   │   └── Parameters.properties
-│   └── ...
-├── images/
-├── testbed_setup.py      # Abstract base class for new frameworks
-├── requirements.txt       # Dependency list for quick installation
-├── setup.py               # Standard Python packaging script
-└── README.md              # This file
+├── main.py                # The main script to run the optimization process.
+├── cao.py                 # Implementation of the core CAO algorithm.
+├── centralized_decision_making.py  # Module for centralized decision-making strategies (if needed).
+├── agent_information.py  # Defines the structure for storing and managing agent information.
+├── resource_loader.py    # Utility for loading resources like parameter files.
+├── test_validator.py      # Contains unit tests to validate the functionality of each testbed.
+├── optimization_loop.py   # Implements the main optimization loop for the algorithm.
+├── testbeds/              # Directory containing various testbed scenarios.
+│   ├── HoldTheLine/       # A simple testbed where robots align in a line formation.
+│   │   ├── Framework.py    # Defines the specific framework and logic for this testbed.
+│   │   └── Parameters.properties  # Configuration parameters for this testbed.
+│   ├── AdaptiveCoverage2D/  # A testbed where robots cover a 2D space with adaptive density.
+│   │   ├── Framework.py    # Defines the specific framework and logic for this testbed.
+│   │   └── Parameters.properties  # Configuration parameters for this testbed.
+│   └── ...                # Other potential testbeds.
+├── images/               # Directory for storing images used in the applications of the algorithm.
+├── testbed_setup.py      # An abstract base class providing a template for creating new testbed frameworks.
+├── requirements.txt       # Lists the project's dependencies for easy installation.
+├── setup.py               # Standard Python setup script for packaging and distribution.
+└── README.md              # This readme file providing an overview of the project.
 ```
 
 ## Installation
