@@ -6,7 +6,7 @@ setup(
     description="Plug-n-play, Multi-robot Algorithm",
     author="Athanasios Kapoutsis",
     author_email="binary.point@gmail.com",
-    license="MIT",
+    license="GNU v3",
     packages=find_packages(),
     install_requires=[
         "numpy>=1.21",
