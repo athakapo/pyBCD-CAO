@@ -6,6 +6,7 @@
 > [**Journal Link**](https://journals.sagepub.com/doi/10.1177/0278364919845054) | [**arXiv**](https://arxiv.org/abs/2111.07441)
 
 This Python-based project presents a distributed algorithm applicable to many practical multi-robot applications. In such multi-robot applications, the user-defined objectives of the mission can be cast as a general optimization problem, without explicit guidelines for the subtasks per different robot.
+
 ---
 
 ## Twin Repository (Java)
