@@ -23,6 +23,9 @@ class OptimizationLoop:
         elif testbedName == "IntentAware":
             mod = importlib.import_module("testbeds.IntentAware.Framework")
             testbed_class = getattr(mod, "IntentAwareTestbed")
+        elif testbedName == "HazardEnclosure":
+            mod = importlib.import_module("testbeds.HazardEnclosure.Framework")
+            testbed_class = getattr(mod, "HazardEnclosureTestbed")
         else:
             raise ValueError("Unknown testbed name")
         self.testbed = testbed_class()

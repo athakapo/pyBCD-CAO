@@ -42,7 +42,7 @@ This project implements a **distributed optimization** algorithm applicable to a
 
 ## Included Testbeds
 
-This Python repository ships with three frameworks:
+This Python repository ships with four frameworks:
 
 1. **HoldTheLine**  
    A simple (toy) problem where robots must be positioned in a specific line formation.
@@ -54,11 +54,15 @@ This Python repository ships with three frameworks:
 
    `The agents do not explictly know the environment’s important regions; they learn these online from local sensors.`
 
-2. **IntentAware**  
+3. **IntentAware**  
    A dynamic, collaborative task where robots adaptively position themselves in an evolving 2D environment. 
 
    `The agents do not have explicit individual goals; they learn online to optimize a global cost that integrates coverage, team cohesion, and target tracking.`
 
+4. **HazardEnclosure**  
+   A dynamic, collaborative task where robots must collectively form a barrier around an evolving hazardous region.
+
+   `The agents do not receive explicit individual instructions; instead, they learn online to adjust their positions cooperatively to minimize gaps, maintain a uniform enclosure, and track the moving hazard.`
 
 ---
 
