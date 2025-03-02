@@ -5,14 +5,11 @@
 > The International Journal of Robotics Research, 38(7), pp.813-832.  
 > [**Journal Link**](https://journals.sagepub.com/doi/10.1177/0278364919845054) | [**arXiv**](https://arxiv.org/abs/2111.07441)
 
-This Python version is well-suited for:
-- Rapid prototyping
-- Data analysis with Python libraries (NumPy, SciPy, etc.)
-- Researchers who prefer an interpreted language for quick testing
+This Python-based project presents a distributed algorithm applicable to many practical multi-robot applications. In such multi-robot applications, the user-defined objectives of the mission can be cast as a general optimization problem, without explicit guidelines for the subtasks per different robot.
 ---
 
 ## Twin Repository (Java)
-A **Java** Twin implementation is also available here: [A-distributed-plug-n-play-algorithm-for-multi-robot-applications](https://github.com/athakapo/A-distributed-plug-n-play-algorithm-for-multi-robot-applications). The goal of this project is to provide a multi-robot coordination framework that can be easily integrated into real-world applications.
+A **Java** Twin implementation is also available here: [A-distributed-plug-n-play-algorithm-for-multi-robot-applications](https://github.com/athakapo/A-distributed-plug-n-play-algorithm-for-multi-robot-applications). 
 
 ---
 This project implements a **distributed optimization** algorithm applicable to a wide range of **multi-robot** applications. The user-defined mission objectives are cast as a general optimization problem, without an explicit breakdown of subtasks per robot. Despite each robot not having direct access to the other robots’ decision variables or measurements, it effectively updates its own decision variables to cooperatively achieve the team objectives.
