@@ -117,11 +117,6 @@ The script will:
 2) Construct the initial conditions (possibly random or from a specified arrangement).
 3) Iterate the optimization loop, printing or storing the cost function values.
 
-Similarly, for AdaptiveCoverage2D:
-```bash
-python main.py AdaptiveCoverage2D
-```
-
 ## Applications
 
 This repository showcases a variety of applications demonstrating advanced multi-robot coordination and distributed intelligence, tackling real-world challenges with innovative solutions.
