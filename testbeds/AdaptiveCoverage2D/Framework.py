@@ -371,3 +371,12 @@ class AdaptiveCoverage2DFramework(testbed_setup):
         # This method is assumed to be implemented in Setup.
         # It should return the latest decision variables (a 2D array where each row corresponds to a robot).
         return self.last_known_decisions
+
+    def initializeLiveVisualization(self):
+        pass
+
+    def updateLiveVisualization(self, iter, J):
+        pass
+
+    def finalizeLiveVisualization(self):
+        pass

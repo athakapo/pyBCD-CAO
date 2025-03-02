@@ -117,3 +117,13 @@ class Framework(testbed_setup):
         height = el1 - el2
         distance = distance ** 2 + height ** 2
         return math.sqrt(distance)
+
+
+    def initializeLiveVisualization(self):
+        pass
+
+    def updateLiveVisualization(self, iter, J):
+        pass
+
+    def finalizeLiveVisualization(self):
+        pass

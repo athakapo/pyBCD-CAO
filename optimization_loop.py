@@ -20,9 +20,14 @@ class OptimizationLoop:
         elif testbedName == "AdaptiveCoverage2D":
             mod = importlib.import_module("testbeds.AdaptiveCoverage2D.Framework")
             testbed_class = getattr(mod, "AdaptiveCoverage2DFramework")
+        elif testbedName == "IntentAware":
+            mod = importlib.import_module("testbeds.IntentAware.Framework")
+            testbed_class = getattr(mod, "IntentAwareTestbed")
         else:
             raise ValueError("Unknown testbed name")
         self.testbed = testbed_class()
+        if propertiesFILE.get("enableVisualization", "false").lower() == "true":
+            self.testbed.initializeLiveVisualization()
         self.testbed.PassProperties(propertiesFILE)
         self.testbed.worldConstructor()
         if initialDecisions is not None:
@@ -58,10 +63,13 @@ class OptimizationLoop:
             self.testbed.current_iter = iter
             self.testbed.updateAugmentedDecisionVector(decisionVariable)
             J = self.testbed.CalculateCF(decisionVariable)
+            if propertiesFILE.get("enableVisualization", "false").lower() == "true":
+                self.testbed.updateLiveVisualization(iter, J)
             self.JJ.append(J)
             if self.propertiesFILE.get("displayTime&CF", "false").lower() == "true":
                 print("Testbed: {} | Timestamp: {} , CF: {}".format(testbedName, iter, J))
             decisionVariable = self.planner.produceDecisionVariables(iter, decisionVariable, J)
-
+        if propertiesFILE.get("enableVisualization", "false").lower() == "true":
+            self.testbed.finalizeLiveVisualization()
     def getJJ(self):
         return self.JJ

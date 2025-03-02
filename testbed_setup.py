@@ -32,6 +32,18 @@ class testbed_setup(ABC):
     def worldConstructor(self):
         pass
 
+    @abstractmethod
+    def initializeLiveVisualization(self):
+        pass
+
+    @abstractmethod
+    def updateLiveVisualization(self, iter, J):
+        pass
+
+    @abstractmethod
+    def finalizeLiveVisualization(self):
+        pass
+
     def setWriter(self, writer):
         self.log_helper = writer
 
