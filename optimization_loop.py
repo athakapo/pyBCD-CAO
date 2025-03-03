@@ -1,34 +1,11 @@
-import copy
-from resource_loader import ResourceLoader
+from helpers.resource_loader import ResourceLoader
 import importlib
 import numpy as np
 
 class OptimizationLoop:
-    def __init__(self, testbedName, propertiesFILE=None, initialDecisions=None):
+    def __init__(self, testbed, propertiesFILE=None, initialDecisions=None):
         self.JJ = []
-        rl = ResourceLoader()
-        if propertiesFILE is None:
-            path = "testbeds/{}/Parameters.properties".format(testbedName)
-            propertiesFILE = rl.get_properties_ap(path)
-        self.propertiesFILE = propertiesFILE
-        self.testbedName = testbedName
-
-        # Dynamically load the appropriate testbed framework
-        if testbedName == "HoldTheLine":
-            mod = importlib.import_module("testbeds.HoldTheLine.Framework")
-            testbed_class = getattr(mod, "Framework")
-        elif testbedName == "AdaptiveCoverage2D":
-            mod = importlib.import_module("testbeds.AdaptiveCoverage2D.Framework")
-            testbed_class = getattr(mod, "AdaptiveCoverage2DFramework")
-        elif testbedName == "IntentAware":
-            mod = importlib.import_module("testbeds.IntentAware.Framework")
-            testbed_class = getattr(mod, "IntentAwareTestbed")
-        elif testbedName == "HazardEnclosure":
-            mod = importlib.import_module("testbeds.HazardEnclosure.Framework")
-            testbed_class = getattr(mod, "HazardEnclosureTestbed")
-        else:
-            raise ValueError("Unknown testbed name")
-        self.testbed = testbed_class()
+        self.testbed = testbed
         if propertiesFILE.get("enableVisualization", "false").lower() == "true":
             self.testbed.initializeLiveVisualization()
         self.testbed.PassProperties(propertiesFILE)
@@ -69,8 +46,8 @@ class OptimizationLoop:
             if propertiesFILE.get("enableVisualization", "false").lower() == "true":
                 self.testbed.updateLiveVisualization(iter, J)
             self.JJ.append(J)
-            if self.propertiesFILE.get("displayTime&CF", "false").lower() == "true":
-                print("Testbed: {} | Timestamp: {} , CF: {}".format(testbedName, iter, J))
+            if propertiesFILE.get("displayTime&CF", "false").lower() == "true":
+                print("Testbed: {} | Timestamp: {} , CF: {}".format(testbed.testbed_name, iter, J))
             decisionVariable = self.planner.produceDecisionVariables(iter, decisionVariable, J)
         if propertiesFILE.get("enableVisualization", "false").lower() == "true":
             self.testbed.finalizeLiveVisualization()

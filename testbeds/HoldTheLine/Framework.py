@@ -1,11 +1,16 @@
 import math
 import numpy as np
-from testbed_setup import testbed_setup  # Adjust the import to match your package structure
+from testbeds.testbed_setup import testbed_setup  # Adjust the import to match your package structure
 from numba import njit
 
 class Framework(testbed_setup):
     def __init__(self):
         super().__init__()
+        # If the class has an attribute _testbed_subdir, copy it to the instance
+        if hasattr(self.__class__, "_testbed_subdir"):
+            self.testbed_name = self.__class__._testbed_subdir
+        else:
+            self.testbed_name = "UnknownTestbed"
         self.pointsToMonitor = None
         self.kw = None
         self.n_p = None

@@ -1,5 +1,5 @@
 import unittest
-from resource_loader import ResourceLoader
+from helpers.resource_loader import ResourceLoader
 from optimization_loop import OptimizationLoop
 
 class ValidatorTest(unittest.TestCase):

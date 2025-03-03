@@ -5,7 +5,7 @@ import matplotlib
 
 matplotlib.use('TkAgg')  # Use Matplotlib fallback for 2D visualization
 import matplotlib.pyplot as plt
-from testbed_setup import testbed_setup
+from testbeds.testbed_setup import testbed_setup
 
 
 class HazardEnclosureTestbed(testbed_setup):

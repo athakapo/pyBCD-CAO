@@ -254,33 +254,35 @@ This repository showcases a variety of applications demonstrating advanced multi
 ## Adding a New Multi-Robot Testbed
 1) Create a New Directory under `testbeds/`, e.g. `testbeds/MyTestbed`.
 2) Implement a `Framework` class inside `MyTestbed/Framework.py`
+
 ```python 
-from testbed_setup import testbed_setup  # or from myproject.abstract_setup import Setup
+from testbeds.testbed_setup import testbed_setup  # or from myproject.abstract_setup import Setup
+
 
 class MyTestbedFramework(testbed_setup):
-    def __init__(self):
-        super().__init__()
-        # Additional initialization
+   def __init__(self):
+      super().__init__()
+      # Additional initialization
 
-    def worldConstructor(self):
-        # Construct the environment, e.g. self.Q = ...
-        pass
+   def worldConstructor(self):
+      # Construct the environment, e.g. self.Q = ...
+      pass
 
-    def CalculateCF(self, decision_variables):
-        # Implement your cost function computations
-        pass
+   def CalculateCF(self, decision_variables):
+      # Implement your cost function computations
+      pass
 
-    def EvaluateCF(self, decision_variables, r):
-        # Evaluate cost from the perspective of robot r
-        pass
+   def EvaluateCF(self, decision_variables, r):
+      # Evaluate cost from the perspective of robot r
+      pass
 
-    def isThisAValidDecisionCommand(self, r, decision_variables):
-        # Return True if the vector is valid for robot r
-        pass
+   def isThisAValidDecisionCommand(self, r, decision_variables):
+      # Return True if the vector is valid for robot r
+      pass
 
-    def fetchDecisionVector(self):
-        # Possibly set self.initial_decisions here
-        pass
+   def fetchDecisionVector(self):
+      # Possibly set self.initial_decisions here
+      pass
 ```
 3) Create a `Parameters.properties` in `testbeds/MyTestbed/Parameters.properties` to specify parameters like number of robots, iteration count, etc.
 4) (Optional) Add a test in `test_validator.py` or a new test file to ensure your new testbed runs properly.
