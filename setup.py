@@ -9,9 +9,9 @@ setup(
     license="GNU v3",
     packages=find_packages(),
     install_requires=[
-        "numpy>=1.21",
-        "scipy>=1.7",
-        "numba>=0.55"
+        "numpy>=1.19",
+        "matplotlib>=3.3",
+        "numba>=0.53"
     ],
     python_requires=">=3.8",
     classifiers=[

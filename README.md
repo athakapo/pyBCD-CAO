@@ -69,26 +69,28 @@ This Python repository ships with four frameworks:
 ## Repository Structure
 ```text
 pyBCD-CAO/
-├── main.py                # The main script to run the optimization process.
-├── cao.py                 # Implementation of the core CAO algorithm.
-├── centralized_decision_making.py  # Module for centralized decision-making strategies (if needed).
-├── agent_information.py  # Defines the structure for storing and managing agent information.
-├── resource_loader.py    # Utility for loading resources like parameter files.
-├── test_validator.py      # Contains unit tests to validate the functionality of each testbed.
-├── optimization_loop.py   # Implements the main optimization loop for the algorithm.
-├── testbeds/              # Directory containing various testbed scenarios.
-│   ├── HoldTheLine/       # A simple testbed where robots align in a line formation.
-│   │   ├── Framework.py    # Defines the specific framework and logic for this testbed.
-│   │   └── Parameters.properties  # Configuration parameters for this testbed.
-│   ├── AdaptiveCoverage2D/  # A testbed where robots cover a 2D space with adaptive density.
-│   │   ├── Framework.py    # Defines the specific framework and logic for this testbed.
-│   │   └── Parameters.properties  # Configuration parameters for this testbed.
-│   └── ...                # Other potential testbeds.
-├── images/               # Directory for storing images used in the applications of the algorithm.
-├── testbed_setup.py      # An abstract base class providing a template for creating new testbed frameworks.
-├── requirements.txt       # Lists the project's dependencies for easy installation.
-├── setup.py               # Standard Python setup script for packaging and distribution.
-└── README.md              # This readme file providing an overview of the project.
+├── main.py                          # Main script to run the optimization process.
+├── cao.py                           # Core CAO algorithm implementation.
+├── centralized_decision_making.py   # Module for centralized decision-making strategies.
+├── agent_information.py             # Defines the structure for storing and managing agent information.
+├── resource_loader.py               # Utility for loading resources like parameter files.
+├── optimization_loop.py             # Implements the main optimization loop.
+├── testbed_setup.py                 # Abstract base class for creating new testbed frameworks.
+├── testbeds/                        # Directory containing various testbed scenarios.
+│   ├── HoldTheLine/                 # Testbed where robots align in a line formation.
+│   │   ├── Framework.py             # Framework and logic for this testbed.
+│   │   └── Parameters.properties    # Configuration parameters for this testbed.
+│   ├── AdaptiveCoverage2D/          # Testbed for adaptive 2D coverage.
+│   │   ├── Framework.py             # Framework and logic for this testbed.
+│   │   └── Parameters.properties    # Configuration parameters for this testbed.
+│   └── ...                          # Other potential testbeds.
+├── images/                          # Directory for storing images used in the project.
+├── unittests/                       # Contains unit tests for validating the code.
+│   └── test_validator.py            # Unit tests for testbed validation.
+├── requirements.txt                 # Lists project dependencies.
+├── setup.py                         # Setup script for packaging and distribution.
+└── README.md                        # This file.
+
 ```
 
 ## Installation
