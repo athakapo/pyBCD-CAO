@@ -40,6 +40,11 @@ class HazardEnclosureTestbed(testbed_setup):
 
     def __init__(self):
         super().__init__()
+        # If the class has an attribute _testbed_subdir, copy it to the instance
+        if hasattr(self.__class__, "_testbed_subdir"):
+            self.testbed_name = self.__class__._testbed_subdir
+        else:
+            self.testbed_name = "UnknownTestbed"
         # Load parameters from file relative to this script.
         params_path = os.path.join(os.path.dirname(__file__), "Parameters.properties")
         self.load_parameters(params_path)
